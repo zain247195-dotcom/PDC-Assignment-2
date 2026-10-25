@@ -10,5 +10,9 @@ logWorker.start();
 
 System.out.println("Telemetry state after start: " + telemetry.getState());
 System.out.println("Log worker state after start: " + logWorker.getState());
+telemetry.join();
+logWorker.join();
+
+System.out.println("Both workers completed.");
     }
 }
