@@ -4,6 +4,8 @@ public class TradingEngineApp {
         TradeEvent event2 = new ReutersQuoteEvent("Reuters-Gateway", System.currentTimeMillis(), 250.00, 249.80, 250.25);
         TradeEvent event3 = new TradeEvent("Internal-System", System.currentTimeMillis(), 500.00);
 
-     
+        event1.dispatch();
+        event2.dispatch();
+        event3.dispatch();
     }
 }
