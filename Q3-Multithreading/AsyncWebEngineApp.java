@@ -5,5 +5,10 @@ public class AsyncWebEngineApp {
         TelemetryThread telemetry = new TelemetryThread();
         telemetry.setName("Telemetry-Worker");
         Thread logWorker = new Thread(new LogProcessorTask(), "Log-Worker");
+        telemetry.start();
+logWorker.start();
+
+System.out.println("Telemetry state after start: " + telemetry.getState());
+System.out.println("Log worker state after start: " + logWorker.getState());
     }
 }
