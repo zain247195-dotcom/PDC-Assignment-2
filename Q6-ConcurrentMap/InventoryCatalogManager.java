@@ -16,4 +16,9 @@ public class InventoryCatalogManager {
             new ConcurrentHashMap<>(createInitialCatalog());
         runBenchmark("ConcurrentHashMap", catalog, true);
     }
+    public static void main(String[] args) throws InterruptedException {
+        InventoryCatalogManager manager = new InventoryCatalogManager();
+        manager.benchmarkSynchronizedMap();
+        manager.benchmarkConcurrentMap();
+    }
 }
